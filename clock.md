@@ -56,6 +56,7 @@ let timer = null; // Сюда положим ID таймера, чтобы по�
 const secondsDisplay = document.getElementById('seconds'); // span, в который пишем время
 const startBtn = document.getElementById('startBtn'); // кнопка Старт
 const stopBtn = document.getElementById('stopBtn');   // кнопка Стоп
+const main = document.querySelector('main');
 
 // Массив с цветами, которые будут меняться
 const colors = ['#FF6B6B', '#FFD93D', '#6BCB77', '#4D96FF', '#C084FC'];
@@ -68,7 +69,7 @@ function updateTimer() {
 
   // Проверяем: если секунд кратно 5 (то есть каждые 5 секунд)
   if (seconds % 5 === 0) {
-    document.body.style.backgroundColor = colors[colorIndex]; // Меняем фон на текущий цвет
+    main.style.backgroundColor = colors[colorIndex]; // Меняем фон на текущий цвет
     colorIndex = (colorIndex + 1) % colors.length; // Переходим к следующему цвету по кругу
   }
 }
