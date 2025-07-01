@@ -48,13 +48,14 @@ body.light-theme footer {
 }
 
 body.light-theme .btn-outline-light {
-  border-color: #333;
   color: #333;
+  background-color: #ffffff;
+
 }
 
 body.light-theme .btn-outline-light:hover {
-  background-color: #333;
-  color: white;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
 }
 ```
 
