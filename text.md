@@ -20,6 +20,8 @@
 
 ## 🧱 Шаг 1. Вёрстка в `index.html`
 
+Ссылка на шаблон: https://github.com/MrRezvan/JS-Lesson/blob/main/index.html
+
 ```html
 <div class="container">
   <h1 id="animated-title"></h1>
