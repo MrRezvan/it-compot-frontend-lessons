@@ -49,43 +49,48 @@
 В `timer.js` пишем:
 
 ```js
-let seconds = 0; // Переменная, в которой будем хранить количество секунд
-let timer = null; // Сюда положим ID таймера, чтобы потом его остановить
+let seconds = 0; // Сколько секунд прошло
+let timer = null; // ID таймера
 
-// Получаем элементы со страницы
-const secondsDisplay = document.getElementById('seconds'); // span, в который пишем время
-const startBtn = document.getElementById('startBtn'); // кнопка Старт
-const stopBtn = document.getElementById('stopBtn');   // кнопка Стоп
+// HTML-элементы
+const secondsDisplay = document.getElementById('seconds');
+const startBtn = document.getElementById('startBtn');
+const stopBtn = document.getElementById('stopBtn');
+
+// Добавляем если группа успеет сделать, обычный таймер
 const main = document.querySelector('main');
 
-// Массив с цветами, которые будут меняться
+// Массив цветов Добавляем если группа успеет сделать, обычный таймер
 const colors = ['#FF6B6B', '#FFD93D', '#6BCB77', '#4D96FF', '#C084FC'];
-let colorIndex = 0; // Индекс текущего цвета
+let colorIndex = 0;
 
-// Функция, которая запускается каждую секунду
+// ОДНА функция, но две логические части
 function updateTimer() {
-  seconds++; // Увеличиваем счётчик секунд на 1
-  secondsDisplay.textContent = seconds; // Обновляем текст в span
 
-  // Проверяем: если секунд кратно 5 (то есть каждые 5 секунд)
+  seconds++; // Прибавляем секунду
+  secondsDisplay.textContent = seconds; // Показываем время
+
+  // === Добавляем если группа успеет сделать, обычный таймер === 
+  // Каждые 5 секунд меняем цвет фона
   if (seconds % 5 === 0) {
-    main.style.backgroundColor = colors[colorIndex]; // Меняем фон на текущий цвет
-    colorIndex = (colorIndex + 1) % colors.length; // Переходим к следующему цвету по кругу
+    main.style.backgroundColor = colors[colorIndex];
+    colorIndex = (colorIndex + 1) % colors.length;
   }
 }
 
-// Обработчик кнопки Старт
+// Кнопка "Старт"
 startBtn.addEventListener('click', () => {
-  if (timer === null) { // Запускаем таймер, только если он ещё не работает
-    timer = setInterval(updateTimer, 1000); // Каждую секунду вызываем updateTimer
+  if (timer === null) {
+    timer = setInterval(updateTimer, 1000);
   }
 });
 
-// Обработчик кнопки Стоп
+// Кнопка "Стоп"
 stopBtn.addEventListener('click', () => {
-  clearInterval(timer); // Останавливаем таймер
-  timer = null; // Сбрасываем переменную, чтобы можно было снова запустить
+  clearInterval(timer);
+  timer = null;
 });
+
 ```
 
 ---
