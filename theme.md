@@ -31,28 +31,30 @@
 Добавим стиль, который будет включаться при активации светлой темы:
 
 ```css
+/* === ЧАСТЬ ДЛЯ НОВИЧКОВ === */
+body.simple-light {
+  background: #f0f0f0;
+  color: #1a1a1a;
+}
+
+/* === ЧАСТЬ ДЛЯ ПРОДВИНУТЫХ === */
 body.light-theme {
   background: radial-gradient(circle at top left, #f0f0f0, #ffffff);
   color: #1a1a1a;
 }
-
 body.light-theme header {
   background: linear-gradient(90deg, #ffd700, #ffa500);
 }
-
 body.light-theme .card,
 body.light-theme #lesson-content,
 body.light-theme footer {
   background-color: rgba(0, 0, 0, 0.05);
   color: #000;
 }
-
 body.light-theme .btn-outline-light {
   color: #333;
   background-color: #ffffff;
-
 }
-
 body.light-theme .btn-outline-light:hover {
   background-color: #ffffff;
   color: rgb(0, 0, 0);
@@ -66,18 +68,22 @@ body.light-theme .btn-outline-light:hover {
 В `script.js` добавим:
 
 ```js
-const toggleBtn = document.getElementById('themeToggle');
+/* === ЧАСТЬ ДЛЯ НОВИЧКОВ === */
+// Просто переключаем класс — тема не сохраняется
+document.getElementById('simpleToggle').addEventListener('click', () => {
+  document.body.classList.toggle('simple-light');
+});
 
+/* === ЧАСТЬ ДЛЯ ПРОДВИНУТЫХ === */
 // Проверяем, есть ли сохранённая тема
 if (localStorage.getItem('theme') === 'light') {
   document.body.classList.add('light-theme');
 }
 
-// При клике — переключаем тему
-toggleBtn.addEventListener('click', () => {
+// Переключаем с сохранением
+document.getElementById('themeToggle').addEventListener('click', () => {
   document.body.classList.toggle('light-theme');
 
-  // Сохраняем тему в localStorage
   if (document.body.classList.contains('light-theme')) {
     localStorage.setItem('theme', 'light');
   } else {
