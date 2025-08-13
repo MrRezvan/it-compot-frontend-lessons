@@ -77,10 +77,8 @@ function typeText(text, element, delay = 100) {
   }
 }
 
-// Запускаем при загрузке страницы
-window.addEventListener("DOMContentLoaded", () => {
-  typeText(text, title, 100); // 100мс между буквами
-});
+// Вызов функции
+typeText(text,title)
 ```
 
 ---
