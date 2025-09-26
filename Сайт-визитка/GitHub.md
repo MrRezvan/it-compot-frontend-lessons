@@ -27,7 +27,7 @@
    3 - нажимаем на кнопку создать  
 5) Загружаем файлы через браузер
 
-<img src="images/Picture (92).png" alt="Kartinka">
+<img src="images/Picture (92).png" alt="Kartinka" width="500">
 
 6) Открываем папку с сайтом и переносим файлы и папки в браузер
 
