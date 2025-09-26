@@ -19,33 +19,130 @@ Gallery
 
 1) Открываем макет, рассуждаем по поводу секции gallery (для чего он нужен и что там располагается). Объясняем, что реализовывать группу изображений будем с помощью списка.  
 2) Переходим в Sublime Text, а именно в index.html и после тега section добавляем тег section и сразу задаём ему класс gallery.  
+```html
+	<section class="gallery">
 
+	</section>
+```
 3) Обращаем внимание на то, что в этой секции div с классом container не нужен.  
 4) Добавляем тег h2 с классом gallery__title.  
-
+```html
+	<section class="gallery">
+		<h2 class="gallery__title">Галерия</h2>
+	</section>
+```
 5) Добавляем тег ul с классом gallery__list.  
-
+```html
+	<section class="gallery">
+		<h2 class="gallery__title">Галерия</h2>
+		<ul class="gallery__list">
+			
+		</ul>
+	</section>
+```
 6) Добавляем тег li с классом gallery__item.  
-
+```html
+		<ul class="gallery__list">
+			<li class="gallery__item">
+				
+			</li>
+		</ul>
+```
 7) Вспоминаем, что для реализации работы плагина тег img должен находиться в теге a с классом lightzoom (можно дать время, чтобы ребята открыли старые проекты или зайти на сайт плагина — https://codernote.ru/lightzoom/ ).  
 8) Пишем тег a с классами lightzoom и gallery__link.  
+```html
+		<ul class="gallery__list">
+			<li class="gallery__item">
+				<a href="#" class="lightzoom gallery__link">
 
+				</a>
+			</li>
+		</ul>
+```
 9) Пишем тег img с классом gallery__img и в src указываем путь до нужной картинки.  
-
+```html
+				<li class="gallery__item">
+					<a href="img/img1.png" class="lightzoom gallery__link">
+						<img src="img/img1.png" class="gallery__img">
+					</a>
+				</li>
+```
 10) Копируем тег li и вставляем его столько, сколько изображений на макете, после меняем src на нужный у каждого img.  
-
+```html
+<section class="gallery">
+			<h2 class="gallery__title">Галерея</h2>
+			<ul class="gallery__list">
+				<li class="gallery__item">
+					<a href="#" class="lightzoom gallery__link">
+						<img src="img/img1.png" class="gallery__img">
+					</a>
+				</li>
+				<li class="gallery__item">
+					<a href="#" class="lightzoom gallery__link">
+						<img src="img/img2.png" class="gallery__img">
+					</a>
+				</li>
+				<li class="gallery__item">
+					<a href="#" class="lightzoom gallery__link">
+						<img src="img/img4.png" class="gallery__img">
+					</a>
+				</li>
+				<li class="gallery__item">
+					<a href="#" class="lightzoom gallery__link">
+						<img src="img/img5.png" class="gallery__img">
+					</a>
+				</li>
+			</ul>
+		</section>
+```
 11) Переходим к стилям. Так как у нас нет в этой секции div с классом container, помимо background зададим padding классу gallery.  
-
+```css
+.gallery {
+	background: #D1233E;
+	padding: 70px 0 57px;
+}
+```
 12) Следующий класс – gallery__title. Ему задаём стили с Figma, а также text-align: center и margin-bottom.  
-
+```css
+.gallery__title {
+	color: #E4E4E4;
+	font-family: Nico Moji;
+	font-size: 48px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	text-align: center;
+	margin-bottom: 59px;
+}
+```
 13) Классу gallery__list задаём display: flex и смотрим на результат.  
-
+```css
+.gallery__list {
+	display: flex;
+}
+```
 14) Изображения встали в одну строку и вылезли из видимой границы страницы. Это хороший момент, чтобы познакомиться со свойством flex-wrap. Рассказываем ребятам про это свойство, как работает и для чего нужно. Задаём его со значением wrap классу gallery__list, а также отключаем точки.  
-
+```css
+.gallery__list {
+	display: flex;
+	flex-wrap: wrap;
+	list-style: none;
+}
+```
 15) Смотрим на результат. Если картинки подобраны хорошо, то уже может смотреться как на макете. Но если что-то не так, то объясняем ребятам, почему так произошло (например картинки большие по ширине и не помещаются вместе на одной строке).  
 
 16) Даже если картинки в порядке, лучше задать свойства, которые точно стилизуют элементы так, как нам нужно. Для gallery__item задаём нужные высоту и ширину, а для gallery__img задаём высоту и ширину 100%. Объясняем как это работает.  
+```css
+.gallery__item {
+	width: 50%;
+	height: 392px;
+}
 
+.gallery__img {
+	width: 100%;
+	height: 100%;
+}
+```
 17) Со стилями закончили, теперь время переходить к подключению плагина. Если осталось достаточно много времени до конца занятия – даём ссылку на сайт плагина (https://codernote.ru/lightzoom/) и пусть ребята пробуют самостоятельно подключить плагин. Если времени мало (или уровень детей easy/easy-medium/medium) отправляем ссылку на скачивание текстового документа с ссылками для подключения — https://disk.yandex.ru/i/GHTrkXInrXfxpQ и помогаем подключить.  
 
 —————————————————————————————————————————  
