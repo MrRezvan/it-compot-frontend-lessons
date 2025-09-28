@@ -35,7 +35,7 @@ About
 ```
 4)Теперь пусть ребята сами пробуют говорить, какие теги дальше используем, а мы их направляем. Сначала идёт заголовок. Пишем тег h2 с классом about__title
 
-<img src="images/Picture(65).png" alt="Картинка">
+<img src="images/Picture (65).png" alt="Картинка">
 
 ```html
 		<section class="about">
@@ -46,7 +46,7 @@ About
 ```
 5)Следующие элементы идут в строку. Спрашиваем у ребят, как реализовать это. Добавляем тег div с классом about__content
 
-<img src="images/Picture(66).png" alt="Картинка">
+<img src="images/Picture (66).png" alt="Картинка">
 
 ```html
 		<section class="about">
@@ -105,9 +105,9 @@ About
 ```
 11)Также этому классу нужен margin-bottom. Помогаем ребятам найти нужное значение в Figma. Объясняем, что если в макете не объединены элементы, то смотрим на самое маленькое значение и выбираем его.
 
-<img src="images/Picture(67).png" alt="Картинка">
+<img src="images/Picture (67).png" alt="Картинка">
 
-<img src="images/Picture(68).png" alt="Картинка">
+<img src="images/Picture (68).png" alt="Картинка">
 
 
 ```css
@@ -144,7 +144,7 @@ About
 ```
 14)Отступа от justify-content: space-between; не появилось. Из-за того, что тег p занимает максимально свободное место. Для того, чтобы этот отступ появился – добавим классу about__text свойство max-width. Ребята пробуют сами посмотреть в Figma нужное значение.
 
-<img src="images/Picture(69).png" alt="Картинка">
+<img src="images/Picture (69).png" alt="Картинка">
 
 ```css
 .about__text {
